@@ -34,6 +34,7 @@ Configuration
 For different configurations, rails_admin_map_field can be configured with the following:
 
 - `longitude_field` - the name of the longitude field that forms the the co-ordinate with the latitude field specified. Defaults to "longitude"
+- `language` - the language of the map. Default to `:en`.
 - `google_api_key` - if you use a Google Maps API Key, it can be specified here.
 - `default_latitude` - the latitude to center the map shown on if the latitude field is blank. Defaults to 51.5, the latitude of London, UK.
 - `default_longitude` - the longitude used if the longitude field is blank. Defaults to -0.126, the longitude of London, UK.
