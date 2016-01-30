@@ -16,6 +16,11 @@ module RailsAdmin::Config::Fields::Types
       :form_map
     end
 
+    # Language of the map
+    register_instance_option(:language) do
+      :en
+    end
+
     # Google Maps API Key - optional
     register_instance_option(:google_api_key) do
       nil

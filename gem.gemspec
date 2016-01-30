@@ -9,8 +9,7 @@ Gem::Specification.new do |s|
   # If you add a runtime dependency, please maintain alphabetical order
   s.add_runtime_dependency('rails', '>= 3.0.0')
 
-  # TODO: uncomment next line when rails_admin gem will be released
-  # s.add_runtime_dependency('rails_admin', '> 0.0.1')
+  s.add_runtime_dependency('rails_admin')
 
 
   s.name              = "rails_admin_map_field"

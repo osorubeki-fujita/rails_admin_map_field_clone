@@ -11,7 +11,7 @@ Usage
 rails_admin_map_field expects that the model will have two attributes, one for latitude and one for longitude of the point represented. To enable rails_admin_map_field, add the following to your `Gemfile`:
 
 ```ruby
-gem "rails_admin_map_field", :git => "git://github.com/jasonl/rails_admin_map_field.git"
+gem "rails_admin_map_field", :git => "git://github.com/beyondthestory/rails_admin_map_field.git"
 ```
 
 Then, add in your `config/initializers/rails_admin.rb` initializer:
@@ -34,9 +34,11 @@ Configuration
 For different configurations, rails_admin_map_field can be configured with the following:
 
 - `longitude_field` - the name of the longitude field that forms the the co-ordinate with the latitude field specified. Defaults to "longitude"
+- `language` - the language of the map. Default to `:en`.
 - `google_api_key` - if you use a Google Maps API Key, it can be specified here.
 - `default_latitude` - the latitude to center the map shown on if the latitude field is blank. Defaults to 51.5, the latitude of London, UK.
 - `default_longitude` - the longitude used if the longitude field is blank. Defaults to -0.126, the longitude of London, UK.
+- `default_zoom_level` - the zoom level of the map. Default to 8.
 
 A more complicated configuration example:
 
