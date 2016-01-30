@@ -53,5 +53,25 @@ module RailsAdmin::Config::Fields::Types
     def longitude_dom_name
       @lon_dom_name ||= "#{bindings[:form].object_name}_#{longitude_field}"
     end
+
+    def latitude_of_object
+      bindings[:object].send(name)
+    end
+
+    def longitude_of_object
+      bindings[:object].send(longitude_field)
+    end
+
+    [ :latitude, :longitude ].each do | attribute |
+      eval <<-DEF
+        def #{ attribute }_on_init
+          #{ attribute }_of_object || default_#{ attribute }
+        end
+      DEF
+    end
+
+    def has_coordinates?
+      [ latitude_of_object, longitude_of_object ].all?(&:present?)
+    end
   end
 end

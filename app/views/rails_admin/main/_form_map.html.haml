@@ -5,7 +5,7 @@
     function init_map_field(){
     jQuery(function(){
       var marker = null;
-      var latlng = new google.maps.LatLng(#{form.object.send(field.name) || field.default_latitude}, #{form.object.send(field.longitude_field) || field.default_longitude});
+      var latlng = new google.maps.LatLng(#{field.latitude_on_init}, #{field.longitude_on_init});
 
       var myOptions = {
         zoom: #{field.default_zoom_level},
@@ -15,10 +15,10 @@
 
       var map = new google.maps.Map(document.getElementById("#{field.dom_name}"), myOptions);
 
-  - if form.object.send(field.name) && form.object.send(field.longitude_field)
+  - if field.has_coordinates?
     :plain
       marker = new google.maps.Marker({
-        position: new google.maps.LatLng(#{form.object.send(field.name)},#{form.object.send(field.longitude_field)}),
+        position: new google.maps.LatLng(#{field.latitude_of_object},#{field.longitude_of_object}),
         map: map
       });
 
